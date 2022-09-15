@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<div class="dice" style="--dice-wh: 150px">
+		<div class="dice">
 			<div class="side back"></div>
 			<div class="side top"></div>
 			<div class="side bottom"></div>
@@ -16,5 +16,20 @@
 			<div class="side right"></div>
 			<div class="side front"></div>
 		</div>
+		<!-- 
+			Example for adding more dices:
+			Just append them after the end of .dice class div as done below.
+			then if you add .sub-dice class then all cubes will be inside one other based upon their size
+			their size can be altered by using style="--dice-wh: <value>"
+				same way you can also change their colors by using --top=<balue> --bottom=<value> etc.
+		 -->
+		<!-- <div class="dice sub-dice" style="--dice-wh: 150px; --top: black">
+			<div class="side back"></div>
+			<div class="side top"></div>
+			<div class="side bottom"></div>
+			<div class="side left"></div>
+			<div class="side right"></div>
+			<div class="side front"></div>
+		</div> -->
 	</body>
 </html>

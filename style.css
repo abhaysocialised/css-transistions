@@ -1,6 +1,11 @@
 :root {
 	--dice-wh: 250px;
-	--sub-dice-wh: calc(var(--dice-wh) / 2);
+	--front: linear-gradient(45deg, #ff4331, #d31a50);
+	--back: linear-gradient(45deg, #ff4331, #d31a50);
+	--left: linear-gradient(45deg, #eff54d, #00ac61);
+	--right: linear-gradient(45deg, #eff54d, #00ac61);
+	--top: linear-gradient(45deg, #538ffb, #5b54fa);
+	--bottom: linear-gradient(45deg, #538ffb, #5b54fa);
 }
 
 * {
@@ -26,8 +31,8 @@ body {
 	animation: rotate 10s linear infinite;
 }
 
+/* add this class to the dice with .dice class to show this dice inside current one */
 .sub-dice {
-	--dice-wh: var(--sub-dice-wh);
 	position: absolute;
 }
 
@@ -59,35 +64,35 @@ body {
 .dice .front {
 	transform: rotateY(0deg) translateZ(calc(var(--dice-wh) / 2));
 	/* background-color: #ff6263; */
-	background-image: linear-gradient(45deg, #ff4331, #d31a50);
+	background: var(--front);
 }
 
 .dice .back {
 	transform: rotateY(180deg) translateZ(calc(var(--dice-wh) / 2));
 	/* background-color: #ff6263; */
-	background-image: linear-gradient(45deg, #ff4331, #d31a50);
+	background: var(--back);
 }
 
 .dice .left {
 	transform: rotateY(-90deg) translateZ(calc(var(--dice-wh) / 2));
 	/* background-color: #1faa59; */
-	background-image: linear-gradient(45deg, #eff54d, #00ac61);
+	background: var(--left);
 }
 
 .dice .right {
 	transform: rotateY(90deg) translateZ(calc(var(--dice-wh) / 2));
 	/* background-color: #1faa59; */
-	background-image: linear-gradient(45deg, #eff54d, #00ac61);
+	background: var(--right);
 }
 
 .dice .top {
 	transform: rotateX(90deg) translateZ(calc(var(--dice-wh) / 2));
 	/* background-color: #1b98f5; */
-	background-image: linear-gradient(45deg, #538ffb, #5b54fa);
+	background: var(--top);
 }
 
 .dice .bottom {
 	transform: rotateX(-90deg) translateZ(calc(var(--dice-wh) / 2));
 	/* background-color: #1b98f5; */
-	background-image: linear-gradient(45deg, #538ffb, #5b54fa);
+	background: var(--bottom);
 }
