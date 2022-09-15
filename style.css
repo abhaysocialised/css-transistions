@@ -28,11 +28,8 @@ body {
 }
 
 .sub-dice {
-	width: var(--sub-dice-wh);
-	height: var(--sub-dice-wh);
-	position: absolute;
 	--dice-wh: var(--sub-dice-wh);
-	animation: rotate 10s linear infinite;
+	position: absolute;
 }
 
 @keyframes rotate {
