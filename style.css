@@ -1,5 +1,6 @@
 :root {
 	--dice-wh: 250px;
+	--sub-dice-wh: calc(var(--dice-wh) / 2);
 }
 
 * {
@@ -15,13 +16,22 @@ body {
 	background-color: hsl(100, 0%, 0%);
 }
 
-.dice {
+.dice,
+.sub-dice {
 	position: relative;
 	width: var(--dice-wh);
 	height: var(--dice-wh);
 	transform-style: preserve-3d;
 	transform: translateZ(calc((var(--dice-wh) / 2) * -1));
 	transition: all 1s;
+	animation: rotate 10s linear infinite;
+}
+
+.sub-dice {
+	width: var(--sub-dice-wh);
+	height: var(--sub-dice-wh);
+	position: absolute;
+	--dice-wh: var(--sub-dice-wh);
 	animation: rotate 10s linear infinite;
 }
 
@@ -38,7 +48,8 @@ body {
 	}
 }
 
-.side {
+.side,
+.sub-side {
 	width: 100%;
 	height: 100%;
 	opacity: 0.4;
@@ -50,57 +61,44 @@ body {
 	font-size: 2rem;
 }
 
-.front {
+.dice .front,
+.sub-dice .front {
 	transform: rotateY(0deg) translateZ(calc(var(--dice-wh) / 2));
 	/* background-color: #ff6263; */
 	background-image: linear-gradient(45deg, #ff4331, #d31a50);
 }
 
-.back {
+.dice .back,
+.sub-dice .back {
 	transform: rotateY(180deg) translateZ(calc(var(--dice-wh) / 2));
 	/* background-color: #ff6263; */
 	background-image: linear-gradient(45deg, #ff4331, #d31a50);
 }
 
-.left {
+.dice .left,
+.sub-dice .left {
 	transform: rotateY(-90deg) translateZ(calc(var(--dice-wh) / 2));
 	/* background-color: #1faa59; */
 	background-image: linear-gradient(45deg, #eff54d, #00ac61);
 }
 
-.right {
+.dice .right,
+.sub-dice .right {
 	transform: rotateY(90deg) translateZ(calc(var(--dice-wh) / 2));
 	/* background-color: #1faa59; */
 	background-image: linear-gradient(45deg, #eff54d, #00ac61);
 }
 
-.top {
+.dice .top,
+.sub-dice .top {
 	transform: rotateX(90deg) translateZ(calc(var(--dice-wh) / 2));
 	/* background-color: #1b98f5; */
 	background-image: linear-gradient(45deg, #538ffb, #5b54fa);
 }
 
-.bottom {
+.dice .bottom,
+.sub-dice .bottom {
 	transform: rotateX(-90deg) translateZ(calc(var(--dice-wh) / 2));
 	/* background-color: #1b98f5; */
 	background-image: linear-gradient(45deg, #538ffb, #5b54fa);
 }
-
-/* .front::before {
-	content: '1';
-}
-.back::before {
-	content: '2';
-}
-.top::before {
-	content: '3';
-}
-.bottom::before {
-	content: '4';
-}
-.left::before {
-	content: '5';
-}
-.right::before {
-	content: '6';
-} */
